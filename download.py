@@ -31,9 +31,8 @@ def download_sequential(image_links, image_names, image_dir='data/downloaded_pos
                     
 def download_parallel(image_links, image_names, image_dir='data/downloaded_posters/'):
     def download_image(image_link, image_path):
-        if isinstance(image_link, str):
-            with httpx.Client() as client:
-                results = client.get(image_link)
+        if isinstance(image_link, str) and not os.path.exists(image_path):
+            results = httpx.get(image_link, timeout=None)
             
             if results.status_code != 404:
                 with open(image_path, 'wb') as f:
