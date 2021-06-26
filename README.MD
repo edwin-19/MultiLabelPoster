@@ -2,7 +2,8 @@
 This repo was nothing more than to show and test out a few concepts using tensorflow 2 on multilabel classification
 
 You can download the poster csv [here](https://www.kaggle.com/neha1703/movie-genre-from-its-poster?select=SampleMoviePosters)
-Remember to put it in the dat directory
+
+Remember to put it in the data directory
 ```python
 data/
 ├── MovieGenre.csv
